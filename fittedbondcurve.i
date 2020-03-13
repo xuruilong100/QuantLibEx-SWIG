@@ -38,7 +38,7 @@ class FittingMethod {
     bool constrainAtZero() const;
     Array weights() const;
     Array l2 () const;
-    boost::shared_ptr< OptimizationMethod > optimizationMethod () const;
+    boost::shared_ptr<OptimizationMethod> optimizationMethod () const;
 };
 
 %shared_ptr(FittedBondDiscountCurve);
@@ -78,22 +78,22 @@ class ExponentialSplinesFitting : public FittingMethod {
   public:
     ExponentialSplinesFitting(bool constrainAtZero = true,
                               const Array& weights = Array(),
-                              boost::shared_ptr< OptimizationMethod > optimizationMethod=boost::shared_ptr< OptimizationMethod >(),
-                              const Array &l2=Array());
+                              boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                              const Array &l2 = Array());
 };
 
 class NelsonSiegelFitting : public FittingMethod {
   public:
     NelsonSiegelFitting(const Array& weights = Array(),
-    boost::shared_ptr< OptimizationMethod > optimizationMethod=boost::shared_ptr< OptimizationMethod >(),
-    const Array &l2=Array());
+    boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+    const Array &l2 = Array());
 };
 
 class SvenssonFitting : public FittingMethod {
   public:
     SvenssonFitting(const Array& weights = Array(),
-    boost::shared_ptr< OptimizationMethod > optimizationMethod=boost::shared_ptr< OptimizationMethod >(),
-    const Array &l2=Array());
+    boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+    const Array &l2 = Array());
 };
 
 class CubicBSplinesFitting : public FittingMethod {
@@ -101,8 +101,8 @@ class CubicBSplinesFitting : public FittingMethod {
     CubicBSplinesFitting(const std::vector<Time>& knotVector,
                          bool constrainAtZero = true,
                          const Array& weights = Array(),
-                         boost::shared_ptr< OptimizationMethod > optimizationMethod=boost::shared_ptr< OptimizationMethod >(),
-                         const Array &l2=Array());
+                         boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                         const Array &l2 = Array());
     Real basisFunction(Integer i, Time t);
 };
 
@@ -111,8 +111,52 @@ class SimplePolynomialFitting : public FittingMethod {
     SimplePolynomialFitting(Natural degree,
                             bool constrainAtZero = true,
                             const Array& weights = Array(),
-                            boost::shared_ptr< OptimizationMethod > optimizationMethod=boost::shared_ptr< OptimizationMethod >(),
-                            const Array &l2=Array());
+                            boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                            const Array &l2 = Array());
+};
+
+%{
+#include <AdjustedSvenssonFitting.hpp>
+#include <BjorkChristensenFitting.hpp>
+#include <BlissFitting.hpp>
+#include <DieboldLiFitting.hpp>
+
+using QuantLib::AdjustedSvenssonFitting;
+using QuantLib::BjorkChristensenFitting;
+using QuantLib::BlissFitting;
+using QuantLib::DieboldLiFitting;
+%}
+
+class AdjustedSvenssonFitting : public FittingMethod {
+  public:
+    AdjustedSvenssonFitting(const Array& weights = Array(),
+                            boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                            const Array &l2 = Array());
+};
+
+class BjorkChristensenFitting : public FittingMethod {
+  public:
+    BjorkChristensenFitting(const Array& weights = Array(),
+                            boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                            const Array &l2 = Array());
+};
+
+class BlissFitting : public FittingMethod {
+  public:
+    BlissFitting(const Array& weights = Array(),
+                 boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                 const Array &l2 = Array());
+};
+
+class DieboldLiFitting : public FittingMethod {
+  public:
+  DieboldLiFitting(Real kappa,
+                   const Array& weights = Array(),
+                   boost::shared_ptr<OptimizationMethod> optimizationMethod = boost::shared_ptr<OptimizationMethod>(),
+                   const Array& l2 = Array());
+  DieboldLiFitting(Real kappa,
+                   const Array& weights,
+                   const Array& l2);
 };
 
 #endif //quantlib_fitted_bond_i

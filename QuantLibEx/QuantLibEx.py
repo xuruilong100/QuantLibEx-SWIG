@@ -5932,6 +5932,94 @@ class SimplePolynomialFitting(FittingMethod):
 SimplePolynomialFitting_swigregister = _QuantLibEx.SimplePolynomialFitting_swigregister
 SimplePolynomialFitting_swigregister(SimplePolynomialFitting)
 
+class AdjustedSvenssonFitting(FittingMethod):
+    __swig_setmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, AdjustedSvenssonFitting, name, value)
+    __swig_getmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, AdjustedSvenssonFitting, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _QuantLibEx.new_AdjustedSvenssonFitting(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _QuantLibEx.delete_AdjustedSvenssonFitting
+    __del__ = lambda self: None
+AdjustedSvenssonFitting_swigregister = _QuantLibEx.AdjustedSvenssonFitting_swigregister
+AdjustedSvenssonFitting_swigregister(AdjustedSvenssonFitting)
+
+class BjorkChristensenFitting(FittingMethod):
+    __swig_setmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, BjorkChristensenFitting, name, value)
+    __swig_getmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, BjorkChristensenFitting, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _QuantLibEx.new_BjorkChristensenFitting(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _QuantLibEx.delete_BjorkChristensenFitting
+    __del__ = lambda self: None
+BjorkChristensenFitting_swigregister = _QuantLibEx.BjorkChristensenFitting_swigregister
+BjorkChristensenFitting_swigregister(BjorkChristensenFitting)
+
+class BlissFitting(FittingMethod):
+    __swig_setmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, BlissFitting, name, value)
+    __swig_getmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, BlissFitting, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _QuantLibEx.new_BlissFitting(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _QuantLibEx.delete_BlissFitting
+    __del__ = lambda self: None
+BlissFitting_swigregister = _QuantLibEx.BlissFitting_swigregister
+BlissFitting_swigregister(BlissFitting)
+
+class DieboldLiFitting(FittingMethod):
+    __swig_setmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, DieboldLiFitting, name, value)
+    __swig_getmethods__ = {}
+    for _s in [FittingMethod]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, DieboldLiFitting, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        this = _QuantLibEx.new_DieboldLiFitting(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _QuantLibEx.delete_DieboldLiFitting
+    __del__ = lambda self: None
+DieboldLiFitting_swigregister = _QuantLibEx.DieboldLiFitting_swigregister
+DieboldLiFitting_swigregister(DieboldLiFitting)
+
 class Settings(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Settings, name, value)
